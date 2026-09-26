@@ -4,7 +4,7 @@ import ShopPage from "./pages/shopePage/shopePage";
 import Header from "./Component/header/header";
 import SignUpAndSignIn from "./pages/singUpAndSignIn/signUpAndSignIn";
 import { Routes, Route } from "react-router-dom";
-import { auth } from "./firebase/firebase.util";
+import { auth, createUserProfileDocument } from "./firebase/firebase.util";
 
 class App extends React.Component {
   constructor() {
@@ -18,10 +18,26 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({
-        currentUser: user
-      });
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+
+      if (user) {
+        const userRef = await createUserProfileDocument(user);
+
+        userRef.onSnapshot(snapshot => {
+          this.setState({
+            currentUser: {
+              id: snapshot.id,
+              ...snapshot.data()
+            }
+          });
+
+          console.log(this.state);
+        });
+      } else {
+        this.setState({
+          currentUser: null
+        });
+      }
     });
   }
 
@@ -32,7 +48,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header currentUser={this.state.currentUser}  />
+        <Header currentUser={this.state.currentUser} />
 
         <Routes>
           <Route path="/" element={<HomePage />} />
