@@ -1,5 +1,3 @@
-
-
 const SHOP_DATA = [
   {
     id: 1,
@@ -9,7 +7,7 @@ const SHOP_DATA = [
       {
         id: 1,
         name: 'Brown Brim',
-       imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
+        imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
         price: 25
       },
       {
@@ -21,20 +19,20 @@ const SHOP_DATA = [
       {
         id: 3,
         name: 'Brown Cowboy',
-       imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
+        imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
         price: 35
       },
       {
         id: 4,
         name: 'Grey Brim',
-         imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
+        imageUrl: 'https://i.ibb.co/RjBLWxB/grey-brim.png',
         price: 25
       },
       {
         id: 5,
         name: 'Green Beanie',
-         imageUrl: 'https://i.ibb.co/YTjW3vF/green-beanie.png',
-         price: 18
+        imageUrl: 'https://i.ibb.co/YTjW3vF/green-beanie.png',
+        price: 18
       },
       {
         id: 6,
@@ -45,7 +43,7 @@ const SHOP_DATA = [
       {
         id: 7,
         name: 'Red Beanie',
-         imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
+        imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
         price: 18
       },
       {
@@ -57,7 +55,7 @@ const SHOP_DATA = [
       {
         id: 9,
         name: 'Blue Snapback',
-         imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
+        imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
         price: 16
       }
     ]
@@ -70,7 +68,7 @@ const SHOP_DATA = [
       {
         id: 10,
         name: 'Adidas NMD',
-         imageUrl: 'https://i.ibb.co/0s3pdnc/adidas-nmd.png',
+        imageUrl: 'https://i.ibb.co/0s3pdnc/adidas-nmd.png',
         price: 220
       },
       {
@@ -83,7 +81,6 @@ const SHOP_DATA = [
         id: 12,
         name: 'Black Converse',
         imageUrl: 'https://i.ibb.co/bPmVXyP/black-converse.png',
-
         price: 110
       },
       {
@@ -95,7 +92,7 @@ const SHOP_DATA = [
       {
         id: 14,
         name: 'Nike Red High Tops',
-         imageUrl: 'https://i.ibb.co/QcvzydB/nikes-red.png',
+        imageUrl: 'https://i.ibb.co/QcvzydB/nikes-red.png',
         price: 160
       },
       {
@@ -113,7 +110,7 @@ const SHOP_DATA = [
       {
         id: 17,
         name: 'Timberlands',
-         imageUrl: 'https://i.ibb.co/Mhh6wBg/timberlands.png',
+        imageUrl: 'https://i.ibb.co/Mhh6wBg/timberlands.png',
         price: 200
       }
     ]
@@ -127,27 +124,24 @@ const SHOP_DATA = [
         id: 18,
         name: 'Black Jean Shearling',
         imageUrl: 'https://i.ibb.co/XzcwL5s/black-shearling.png',
-      
         price: 125
       },
       {
         id: 19,
         name: 'Blue Jean Jacket',
-         imageUrl: 'https://i.ibb.co/mJS6vz0/blue-jean-jacket.png',
+        imageUrl: 'https://i.ibb.co/mJS6vz0/blue-jean-jacket.png',
         price: 90
       },
       {
         id: 20,
         name: 'Grey Jean Jacket',
-         imageUrl: 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png',
-       
+        imageUrl: 'https://i.ibb.co/N71k1ML/grey-jean-jacket.png',
         price: 90
       },
       {
         id: 21,
         name: 'Brown Shearling',
-         imageUrl: 'https://i.ibb.co/s96FpdP/brown-shearling.png',
-      
+        imageUrl: 'https://i.ibb.co/s96FpdP/brown-shearling.png',
         price: 165
       },
       {
@@ -178,7 +172,7 @@ const SHOP_DATA = [
       {
         id: 25,
         name: 'Floral Dress',
-         imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
+        imageUrl: 'https://i.ibb.co/KV18Ysr/floral-skirt.png',
         price: 80
       },
       {
@@ -215,8 +209,7 @@ const SHOP_DATA = [
       {
         id: 30,
         name: 'Camo Down Vest',
-         imageUrl: 'https://i.ibb.co/xJS0T3Y/camo-vest.png',
-     
+        imageUrl: 'https://i.ibb.co/xJS0T3Y/camo-vest.png',
         price: 325
       },
       {
@@ -234,7 +227,7 @@ const SHOP_DATA = [
       {
         id: 33,
         name: 'Pink T-shirt',
-       imageUrl: 'https://i.ibb.co/RvwnBL8/pink-shirt.png',
+        imageUrl: 'https://i.ibb.co/RvwnBL8/pink-shirt.png',
         price: 25
       },
       {
@@ -246,7 +239,7 @@ const SHOP_DATA = [
       {
         id: 35,
         name: 'Burgundy T-shirt',
-         imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
+        imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
         price: 25
       }
     ]
