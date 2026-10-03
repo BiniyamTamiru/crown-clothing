@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.13.0",
     "firebase": "^12.19.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
@@ -17,6 +18,7 @@
     "react-router-dom": "^7.18.4",
     "redux": "^5.0.1",
     "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
     "reselect": "^5.3.0",
     "sass": "^1.105.0"
   },
