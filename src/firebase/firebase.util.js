@@ -1,7 +1,7 @@
 import firebase from "firebase/compat/app";
-
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
+import { collection } from "firebase/firestore";
 
 const config = {
   apiKey: "AIzaSyD7mO9aDu6HRQ1TPMA2KJDD4jdI2IEtpas",
@@ -13,40 +13,71 @@ const config = {
   measurementId: "G-FGZ5TM43Q9"
 };
 
-export const createUserProfileDocument  = async (userAuth,additionalData )=>{
-   if(!userAuth) return;
-        
-   const userRef = firestore.doc(`users/${userAuth.uid}`);
-
-   const snapShot =await userRef.get();
-
-   if(!snapShot.exists){
-           const {displayName,email}=userAuth;
-           const createdAt =new Date();
-
-           try{
-          await userRef.set({
-            displayName,
-            email,
-            createdAt,
-            ...additionalData
-          })
-           } catch(error){
-             console.log('error creating user', error.message);
-           }
-           
-
-   }
-  return userRef;
-   
-} 
-    
-
 firebase.initializeApp(config);
+
+export const firestore = firebase.firestore();
 
 export const auth = firebase.auth();
 
-export const firestore = firebase.firestore();
+
+// ===============================
+// CREATE USER PROFILE
+// ===============================
+
+export const createUserProfileDocument = async (
+  userAuth,
+  additionalData
+) => {
+  if (!userAuth) return;
+
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+
+  const snapShot = await userRef.get();
+
+  if (!snapShot.exists) {
+    const { displayName, email } = userAuth;
+    const createdAt = new Date();
+
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        createdAt,
+        ...additionalData
+      });
+
+
+      console.log("User profile created successfully");
+    } catch (error) {
+      console.log("Error creating user:", error.message);
+    }
+  }
+
+  return userRef;
+};
+
+export const convertCollectionsSnapshotToMap = (collections) => {
+  const transformedCollection = collections.docs.map(doc => {
+    const { title, items } = doc.data();
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items
+    };
+  });
+
+  console.log(transformedCollection);
+
+  return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  }, {});
+};
+
+// GOOGLE AUTHENTICATION
+
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
@@ -56,5 +87,6 @@ provider.setCustomParameters({
 
 export const signInWithGoogle = () =>
   auth.signInWithPopup(provider);
+
 
 export default firebase;

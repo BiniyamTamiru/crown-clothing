@@ -5,48 +5,44 @@
   height: 350px;
   align-items: center;
   position: relative;
+}
 
-  .image {
-    width: 100%;
-    height: 95%;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 5px;
-  }
+.collection-item .image {
+  width: 100%;
+  height: 95%;
+  background-size: cover;
+  background-position: center;
+}
 
-  .custom-button {
-    width: 80%;
-    opacity: 0.7;
-    position: absolute;
-    top: 255px;
-    display: none;
-  }
+.collection-item .custom-button {
+  width: 80%;
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
 
-  &:hover {
-    .image {
-      opacity: 0.8;
-    }
+.collection-item:hover .image {
+  opacity: 0.8;
+}
 
-    .custom-button {
-      opacity: 0.85;
-      display: flex;
-    }
-  }
+.collection-item:hover .custom-button {
+  display: flex;
+}
 
-  .collection-footer {
-    width: 100%;
-    height: 5%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 18px;
+.collection-item .collection-footer {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
 
-    .name {
-      width: 90%;
-      margin-bottom: 15px;
-    }
+.collection-item .name {
+  width: 90%;
+}
 
-    .price {
-      width: 10%;
-    }
-  }
+.collection-item .price {
+  width: 10%;
 }

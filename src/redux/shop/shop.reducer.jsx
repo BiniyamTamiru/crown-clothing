@@ -1,16 +1,25 @@
-import SHOP_DATA from "./shopeData";
 
-import { collection } from "firebase/firestore";
+import ShopActionTypes from "./shop.type";
+const INITIAL_STATE = {
+  collections: null
+};
 
-const INITIAL_STATE={
-     collections:SHOP_DATA
-}
+const shopReducer = (
+  state = INITIAL_STATE,
+  action
+) => {
+  switch (action.type) {
+     case ShopActionTypes.UPDATE_COLLECTIONS:
+          return {
+            ...state,
+            collections:action.payload
+            
+          };
 
-const shopReducer = (state = INITIAL_STATE,action)=>{
-    switch(action.type){
-        default:
-            return state;
-    }
-}
+
+    default:
+      return state;
+  }
+};
 
 export default shopReducer;
